@@ -6,7 +6,7 @@ The first solo project during my study at General Assembly's Software Engineerin
 # Developed by Sami Hakim 
 
 # Deployment
-Game is deployed and playable here 
+Game is deployed and playable [here](https://hamisakim.github.io/sei-project-one/) 
 
 # Concept 
 This game is based ont the hugeley popular 80's arcade game Pac-Man. 
