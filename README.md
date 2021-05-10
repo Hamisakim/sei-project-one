@@ -1,7 +1,7 @@
 # sei-project-one
 
 Hungry Shark - A Pac-Man spinoff (unofficial)
-The first solo project during my study at General Assembly's Software Engineering immersive. 
+The first solo project during my study at General Assembly's Software Engineering Immersive. 
 
 # Developed by Sami Hakim 
 
@@ -32,7 +32,12 @@ Google Fonts
 GitHub
 
 
-# Game instructions 
+# Game instructions
+Use the WASD or arrow keys to move Bruce the shark and eat all the fish while avoiding the enemies. 
+Eating a turtle will provide invincibiltiy. 
+
+# Approach 
+
 
 
 
