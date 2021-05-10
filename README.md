@@ -15,6 +15,10 @@ If the player eats special items then they can eat the ghosts for a limited time
 
 The game ends when there is no more food or the player has run out of lives. 
 
+<img width="963" alt="Screenshot 2021-05-06 at 22 28 27" src="https://user-images.githubusercontent.com/76621344/117662473-81c0b400-b197-11eb-9757-6c29122e851a.png">
+
+
+
 # Project brief
 * One week to plan and create a game in vanilla JavaScript, HTML and CSS 
 * The player should be able to clear at least one board.
@@ -31,6 +35,10 @@ Technologies:
 # Game instructions
 Use the WASD or arrow keys to move Bruce the shark and eat all the fish while avoiding the enemies. 
 Eating a turtle will provide invincibility. 
+
+
+
+
 
 # Approach 
 I made the grid via a function where the cell count is defined and then used in a for loop. 
@@ -71,8 +79,10 @@ function createGrid() {
 
 For the map design, I used a spreadsheet to visualise the grid easier. 
 Here we can see how the green spaces are useable squares for the characters. The yellow is the pen for the enemy characters 
-![](Screenshot%202021-05-10%20at%2012.20.28.png)
-![](Screenshot%202021-05-10%20at%2012.25.15.png)
+[Screenshot 2021-05-10 at 12 20 28](https://user-images.githubusercontent.com/76621344/117662358-5dfd6e00-b197-11eb-881a-6658b8b528d8.png)
+
+[Screenshot 2021-05-10 at 12 25 15](https://user-images.githubusercontent.com/76621344/117662369-605fc800-b197-11eb-83ec-84b3b91356cf.png)
+
 
 
 # Movement 
