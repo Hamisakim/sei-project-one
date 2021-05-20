@@ -1,26 +1,18 @@
 # Hungry Shark ReadMe
 Hungry Shark - A Pac-Man spinoff (unofficial)
 The first solo project during my study at General Assembly's Software Engineering Immersive. 
-
-Timeframe 7 days
-*Note - no extra work has been done to this apart from deployment. This is to give an accurate representation of what can be accomplished in a set time frame.
-
 # Deployment
-Game is deployed and playable [here](https://hamisakim.github.io/sei-project-one/) 
+The game is deployed and playable [here](https://hamisakim.github.io/sei-project-one/) 
 
 # Concept 
 This game is based on the hugely popular 80's arcade game Pac-Man. 
-The aim of the game is for the player to eat all the food in an arena, while trying themselves to avoid being eaten by the four ghosts that are hunting them.
+The aim of the game is for the player to eat all the food in an arena while trying to avoid being eaten by the four ghosts that are hunting them.
 If the player eats special items then they can eat the ghosts for a limited time and send them back to their start location, and gain extra points in the process. 
 
 The game ends when there is no more food or the player has run out of lives. 
 
-<img width="963" alt="Screenshot 2021-05-06 at 22 28 27" src="https://user-images.githubusercontent.com/76621344/117662473-81c0b400-b197-11eb-9757-6c29122e851a.png">
-
-
-
 # Project brief
-* One week to plan and create a game in vanilla JavaScript, HTML and CSS 
+* One week to plan and create a game in vanilla JavaScript, HTML, and CSS 
 * The player should be able to clear at least one board.
 * The player's score should be displayed at the end of the game
 Technologies:
@@ -36,12 +28,12 @@ Technologies:
 Use the WASD or arrow keys to move Bruce the shark and eat all the fish while avoiding the enemies. 
 Eating a turtle will provide invincibility. 
 
-
-
-
-
 # Approach 
-I made the grid via a function where the cell count is defined and then used in a for loop. 
+I made the grid via a function where the cell count is defined and then used in a for loop. Initially this was a simple 10x10 grid to get the basic movement for Bruce. 
+<img width="1143" alt="Screenshot 2021-02-19 at 12 36 06" src="https://user-images.githubusercontent.com/76621344/118801358-d26f9580-b898-11eb-8b90-24fcf4303c21.png">
+
+Later this was scaled to be much bigger, closer to the original Pac-man map.
+
 
 ```javascript
     const gameGrid = document.querySelector('.game-grid')
@@ -76,12 +68,21 @@ function createGrid() {
       }
 
 ```
+ The code here allows the user to move through the tunnels on the edge of the map
+ ```
+ if (i === 260 || i === 279) {
+          cell.classList.remove('wall')
+        } 
+```
+
+
+
 
 For the map design, I used a spreadsheet to visualise the grid easier. 
-Here we can see how the green spaces are useable squares for the characters. The yellow is the pen for the enemy characters and purple are intersections used for the enemy movement. 
-![Screenshot 2021-05-10 at 12 20 28](https://user-images.githubusercontent.com/76621344/117662596-a452cd00-b197-11eb-9ef5-1922e7e07ff3.png)
-![Screenshot 2021-05-10 at 12 25 15](https://user-images.githubusercontent.com/76621344/117662608-a74dbd80-b197-11eb-934d-510391e397ba.png)
+Here we can see how the green spaces are useable squares for the characters. The yellow is the pen for the enemy characters, purple for intersections.
 
+![Screenshot 2021-05-10 at 12 20 28](https://user-images.githubusercontent.com/76621344/117825121-f3b3fe80-b266-11eb-8945-4fbca46dee97.png)
+![Screenshot 2021-05-10 at 12 25 15](https://user-images.githubusercontent.com/76621344/117825128-f44c9500-b266-11eb-852b-d3922fe6b771.png)
 
 
 
@@ -98,11 +99,11 @@ To streamline the app I made four functions for each direction.  This will also 
     }
 ```
 # Character AI
-To make the enemies move randomly was easy, but I definitely underestimated the complexity of each characters unique movement based on their target tile. For more details on how this works in the real Pac-man refer [here](https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php?page=6). 
+To make the enemies move randomly was easy, but I definitely underestimated the complexity of each character’s unique movement based on their target tile. For more details on how this works in the real Pac-man refer [here](https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php?page=6). 
 
-The enemies move on an interval timer, in this timer we have the smartMoveEnemy function.  This function will check the surrounding enemy tiles and prevent the enemy fro trying to move through a wall, and if the enemy is at an intersection. 
+The enemies move on an interval timer, in this timer we have the smartMoveEnemy function.  This function will check the surrounding enemy tiles and prevent the enemy from trying to move through a wall, and if the enemy is at an intersection. 
 
-When the character arrives at an intersection it must make the choice of which direction to go to get closer to its target tile. This is done via the atIntersection function .
+When the character arrives at an intersection it must choose which direction to go to get closer to its target tile. This is done via the atIntersection function.
 In order to find the shortest distance as a straight line we have to use some Pythagorean  maths. The findC function handles this for us and returns the straight line distance!
 ``` javascript
     function atIntersection(enemy) {
@@ -151,10 +152,22 @@ In order to find the shortest distance as a straight line we have to use some Py
 ```
 
 # Wins and Challenges
-## Challenges 
+## Challenges 😧
 * While it was straightforward to make enemies move randomly giving them AI was much harder than expected! 
-* A key difficulty was using the grid. It not being a x,y grid made things a little harder with the maths. 
-## Wins
+* A key difficulty was using the grid. It not being an x,y grid made things a little harder with the maths. 
+## Wins 🏆
 * I am so proud of this game! I’m very happy with the entry screen especially.
-* After only a month coding this is what I was able to produce!  This was great for my self confidence. 
+* After only a month of coding, this is what I was able to produce!  This was great for my self-confidence. 
+
+
+# Key Learnings and Takeaways 
+This project allowed me to cement my knowledge of the DOM and JavaScript fundamentals. As well as a tiny introduction into AI. 
+The importance of pseudocode and planning before coding is something I took away from this and something I constantly try to implement now.
+
+# Bugs to address 🕷
+* The mute button doesn't unmute. It currently just removes the audio.
+* the play again button will reload the whole site. I need to make this just reload the game 
+* The movement isn't the cleanest so i'd like to add smoother movements.
+
+
 
